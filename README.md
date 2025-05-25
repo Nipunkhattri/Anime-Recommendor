@@ -1,5 +1,7 @@
 # Anime Recommender API
 
+Backend URL - https://anime-recommendor-lili.onrender.com
+
 A FastAPI-based backend service that provides anime recommendations based on user preferences. The API integrates with AniList's GraphQL API to fetch anime data and provides personalized recommendations.
 
 ## 🏗️ Project Structure
