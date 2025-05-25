@@ -74,6 +74,20 @@ npm install
 npm start
 ```
 
+## 📸 Screenshots
+
+### Search Page
+![Search Interface](./screenshots/search.png)
+*Search anime by title and genre*
+
+### Recommendations Page
+![Recommendations Interface](./screenshots/recommendation.png)
+*Get personalized anime recommendations based on preferences*
+
+### Update Preferences Page
+![Update Preferences Interface](./screenshots/updatepreference.png)
+*Manage your genre preferences*
+
 ## 📚 API Documentation
 
 ### Authentication Endpoints
