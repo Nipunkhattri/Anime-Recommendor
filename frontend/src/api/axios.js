@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from '../utils/auth';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:8000', 
+  baseURL: 'https://anime-recommendor-lili.onrender.com/', 
 });
 
 instance.interceptors.request.use((config) => {

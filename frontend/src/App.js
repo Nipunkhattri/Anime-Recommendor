@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
@@ -6,9 +6,13 @@ import Register from './pages/Register';
 import Preferences from './pages/Preferences';
 import Search from './pages/Search';
 import Recommendations from './pages/Recommendations';
-import { isAuthenticated } from './utils/auth';
+import { AuthContext } from './contexts/AuthContext';
 
 function App() {
+  const { isAuth } = useContext(AuthContext);
+
+  console.log('App rendered, isAuth:', isAuth);
+
   return (
     <div>
       <Navbar />
@@ -18,11 +22,11 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route
           path="/preferences"
-          element={isAuthenticated() ? <Preferences /> : <Navigate to="/login" />}
+          element={isAuth ? <Preferences /> : <Navigate to="/login" />}
         />
         <Route
           path="/recommendations"
-          element={isAuthenticated() ? <Recommendations /> : <Navigate to="/login" />}
+          element={isAuth ? <Recommendations /> : <Navigate to="/login" />}
         />
         <Route path="/search" element={<Search />} />
       </Routes>

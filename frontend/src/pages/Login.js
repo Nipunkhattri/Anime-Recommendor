@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from '../api/axios';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthContext';
+import { useContext } from 'react';
 
 function Login() {
   const [form, setForm] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,8 +19,9 @@ function Login() {
     setError('');
     try {
       const res = await axios.post('/auth/login', form);
-      localStorage.setItem('token', res.data.access_token);
-      navigate('/search');
+      console.log('Login response:', res);
+      login(res.data.access_token);
+      navigate('/preferences');
     } catch (err) {
       setError('Invalid credentials');
     }

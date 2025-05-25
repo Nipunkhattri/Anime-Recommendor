@@ -1,4 +1,3 @@
-
 export const getToken = () => {
   let token = localStorage.getItem('token');
   console.log('Token retrieved:', token);
