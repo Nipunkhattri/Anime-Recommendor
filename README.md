@@ -1,5 +1,7 @@
 # Anime Recommender API
 
+Backend URL - https://anime-recommendor-lili.onrender.com
+
 A FastAPI-based backend service that provides anime recommendations based on user preferences. The API integrates with AniList's GraphQL API to fetch anime data and provides personalized recommendations.
 
 ## 🏗️ Project Structure
@@ -43,7 +45,7 @@ python -m venv venv
 
 2. Install dependencies:
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 3. Set environment variables:
